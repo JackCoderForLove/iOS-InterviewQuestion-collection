@@ -1,0 +1,81 @@
+## 0.1 怎样使用 `performSeletctor` 传入三个以上参数？其中一个为结构体? 
+
+#### * 1.将所有参数放入一个字典／数组传过去 
+  
+    
+```objective-c
+- (void)performDemo {
+    NSDictionary *dict = @{
+                           @"name":@"极客学伟",
+                           @"age":@18
+                           };
+    [self performSelector:@selector(performDemoDict:) withObject:dict];
+}
+- (void)performDemoDict:(NSDictionary *)dict {
+    NSLog(@"%@",dict);
+}
+```
+
+#### * 2.使用objc_msgSend()传递
+    
+```
+((void (*)(id,SEL,NSString *, NSArray *, NSInteger))objc_msgSend)(self, @selector(textFunctionWithParam:param2:param3:),@"111",@[@2,@3],123);
+
+//有三个参数的方法
+-(void)textFunctionWithParam:(NSString *)param1 param2:(NSArray *)param2 param3:(NSInteger)param3 {
+    NSLog(@"param1:%@, param2:%@, param3:%ld",param1, param2, param3);
+}
+```
+#### * 3.用NSInvocation传递
+
+
+```
+[self performDemo2selector:@selector(performDemoNumber1:Number2:Number3:)
+```
+
+
+```
+
+- (id)performDemo2selector:(SEL)selector withObjects:(NSArray *)objects {
+    NSMethodSignature *signature = [[self class] instanceMethodSignatureForSelector:selector];
+    if (!signature) {
+        NSLog(@"无此方法");
+        return nil;
+    }
+    // NSInvocation : 利用一个NSInvocation对象包装一次方法调用（方法调用者、方法名、方法参数、方法返回值）
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+    invocation.selector = selector;
+    invocation.target = self;
+    
+    // 除self、_cmd以外的参数个数
+    NSInteger paramCount = signature.numberOfArguments - 2;
+    for (NSUInteger i = 0; i < paramCount; i++) {
+        if (objects.count > i) {
+            id obj = objects[i];
+            if ([obj isKindOfClass:[NSNull class]]) {
+                continue;
+            }
+            [invocation setArgument:&obj atIndex:i + 2];
+        }
+    }
+    
+    [invocation invoke];
+    
+    /// 方法返回体必须为对象！
+    id returnValue = nil;
+    if (signature.methodReturnLength) {
+        [invocation getReturnValue:&returnValue];
+    }
+    return returnValue;
+}
+
+- (NSNumber *)performDemoNumber1:(NSNumber *)number1 Number2:(NSNumber *)number2 Number3:(NSNumber *)number3 {
+    double numb = number1.doubleValue + number2.doubleValue + number3.doubleValue;
+    NSLog(@"和:%f",numb);
+    return [NSNumber numberWithDouble:numb];
+}
+```
+#### * 4.如何传入结构体？
+##### 4.1 使用模型，将结构体作为模型的一个属性
+##### 4.2 将结构体封装成NSValue对象 -> 使用前三方法
+

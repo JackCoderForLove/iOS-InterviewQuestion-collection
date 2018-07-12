@@ -104,6 +104,8 @@
 - 15.二维数组查找一个值。
 
 ## iOS 内存管理
+- 0.1 在OC中，NSNumber对象 是用什么方式来存储的 - 
+- 0.2 在OC中，NSNumber对象 是用什么方式来存储的 - 
 - 1.讲一下 `iOS` 内存管理的理解？(三种方案的结合) - [链接](https://github.com/liberalisman/iOS-InterviewQuestion-collection/blob/master/内存管理/1.第一题.md)
 - 2.使用自动引用计（`ARC`）数应该遵循的原则? - [链接](https://github.com/liberalisman/iOS-InterviewQuestion-collection/blob/master/内存管理/2.第二题.md)
 - 3.`ARC` 自动内存管理的原则？ - [链接](https://github.com/liberalisman/iOS-InterviewQuestion-collection/blob/master/内存管理/3.第三题.md)
@@ -193,6 +195,7 @@
 - 11.如何以通用的方法找到当前显示的`ViewController`? - [链接](https://github.com/liberalisman/iOS-InterviewQuestion-collection/blob/master/UIKit/11.第十一题.md)
 
 ## Foundation
+- 0.1 怎样使用 `performSeletctor` 传入三个以上参数，其中一个为结构体? - 
 - 1.`nil`、`NIL`、`NSNULL` 有什么区别？- [链接](https://github.com/liberalisman/iOS-InterviewQuestion-collection/blob/master/Foundation/1.第一题.md)
 - 2.如何实现一个线程安全的 `NSMutableArray`? - [链接](https://github.com/liberalisman/iOS-InterviewQuestion-collection/blob/master/Foundation/2.第二题.md)
 - 3.如何定义一台 `iOS` 设备的唯一性? - [链接](https://github.com/liberalisman/iOS-InterviewQuestion-collection/blob/master/Foundation/3.第三题.md)

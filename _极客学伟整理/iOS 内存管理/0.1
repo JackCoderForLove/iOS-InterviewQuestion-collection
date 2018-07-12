@@ -1,0 +1,8 @@
+## 在OC中，NSNumber对象 是用什么方式来存储的？
+
+使用 `Tagged Pointer` 的形式，便于节省内存。
+苹果对于 `NSNumber` 和 `NSDate` 对象，改成了用 `Tagged Pointer` 来存储，简单来说，`Tagged Pointer` 是一个假的指针，它的值不再是另一个地址，而就是对应变量的值。
+
+
+- [NSNumber对象缓存以及Tagged Pointer](https://blog.devtang.com/2014/03/21/weak_object_lifecycle_and_tagged_pointer/)
+
