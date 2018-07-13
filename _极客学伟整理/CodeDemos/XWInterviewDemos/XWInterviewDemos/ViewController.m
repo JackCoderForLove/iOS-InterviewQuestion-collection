@@ -9,6 +9,11 @@
 #import "ViewController.h"
 #import <objc/runtime.h>
 
+typedef struct XWSize {
+    CGFloat width;
+    CGFloat height;
+}TestSize;
+
 @interface ViewController ()
 
 @end
@@ -18,8 +23,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self performDemo2selector:@selector(performDemoNumber1:Number2:Number3:) withObjects:@[@1.0,@2.0,@3.0]];
+    [self performDemo3];
+//    [self performDemo2selector:@selector(performDemoNumber1:Number2:Number3:) withObjects:@[@1.0,@2.0,@3.0]];
 //    [self performDemo1];
+}
+
+- (void)performDemo3 {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    TestSize testSize = {10086.00,10010.00};
+    NSValue *testSizeValue = [NSValue valueWithBytes:&testSize objCType:@encode(TestSize)];
+    [dict setObject:testSizeValue forKey:@"testSize"];
+    [self performSelector:@selector(performDemoStructDict:) withObject:dict];
+}
+
+- (void)performDemoStructDict:(NSDictionary *)dict {
+    NSValue *testSizeStruct = dict[@"testSize"];
+    TestSize inputSize;
+    [testSizeStruct getValue:&inputSize];
+    NSLog(@"width: %f  ++  height: %f",inputSize.width,inputSize.height);
 }
 
 - (id)performDemo2selector:(SEL)selector withObjects:(NSArray *)objects {
