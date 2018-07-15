@@ -15,10 +15,14 @@ typedef struct XWSize {
     CGFloat height;
 }TestSize;
 
+typedef void(^XWVoidBlock)(void);
 typedef void(^XWBlock)(NSString *str);
 typedef void(^XWLogBlock)(NSArray *array);
 
 @interface ViewController ()
+
+@property (atomic, strong) NSMutableArray *array;
+
 @property (nonatomic, strong) NSArray *originArray;
 @property (nonatomic, strong) NSMutableArray *conditionArray;
 @property (nonatomic, strong) NSCondition *xwCondition;
@@ -28,16 +32,134 @@ typedef void(^XWLogBlock)(NSArray *array);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.array = [NSMutableArray array];
+    
     self.originArray = @[@1,@2,@3];
     
     self.conditionArray = [NSMutableArray array];
     self.xwCondition = [[NSCondition alloc] init];
     
-    [self lock12];
+    [self lock18];
     
 //    [self performDemo3];
 //    [self performDemo2selector:@selector(performDemoNumber1:Number2:Number3:) withObjects:@[@1.0,@2.0,@3.0]];
 //    [self performDemo1];
+}
+
+- (void)lock18 {
+    NSLog(@"start");
+//    dispatch_sync(dispatch_get_main_queue(), ^{
+//        NSLog(@"sync...main_queue");
+//    });
+    
+    dispatch_sync(dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"sync...global_queue");
+    });
+    NSLog(@"end");
+}
+
+- (void)lock17 {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        for (int i = 0; i < 1000; i++) {
+            [self.array addObject:@(i)];
+            NSLog(@"线程一 %d --- %@ ----- firstOBJ:%@",i,[NSThread currentThread],self.array.firstObject);
+        }
+    });
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        for (int i = 0; i < 10; i++) {
+            if (i == 9) {
+                self.array = nil;
+                NSLog(@"======= nil");
+            }
+            NSLog(@"线程二 %d --- %@",i,[NSThread currentThread]);
+        }
+    });
+}
+
+- (void)lock16 {
+    pthread_once_t once = PTHREAD_ONCE_INIT;
+    pthread_once(&once, lock16Func);
+}
+void lock16Func() {
+     static id shareInstance;
+    shareInstance = [[NSObject alloc] init];
+}
+
+- (id)lock15 {
+    static id shareInstance;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        if (!shareInstance) {
+            shareInstance = [[NSObject alloc] init];
+        }
+    });
+    return shareInstance;
+}
+
+- (void)lock14 {
+    __block pthread_rwlock_t rwlock;
+    pthread_rwlock_init(&rwlock, NULL);
+    __block NSMutableArray *arrayM = [NSMutableArray array];
+    
+    XWBlock writeBlock = ^ (NSString *str) {
+        NSLog(@"开启写操作");
+        pthread_rwlock_wrlock(&rwlock);
+        [arrayM addObject:str];
+        sleep(2);
+        pthread_rwlock_unlock(&rwlock);
+    };
+    
+    XWVoidBlock readBlock = ^ {
+        NSLog(@"开启读操作");
+        pthread_rwlock_rdlock(&rwlock);
+        sleep(1);
+        NSLog(@"读取数据:%@",arrayM);
+        pthread_rwlock_unlock(&rwlock);
+    };
+    
+    for (int i = 0; i < 5; i++) {
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            writeBlock([NSString stringWithFormat:@"%d",i]);
+        });
+    }
+    
+    for (int i = 0; i < 10; i++) {
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            readBlock();
+        });
+    }
+}
+
+- (void)lock13 {
+    dispatch_queue_t queue = dispatch_queue_create("com.qiuxuewei.brrier", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_async(queue, ^{
+        NSLog(@"任务1 -- %@",[NSThread currentThread]);
+    });
+    dispatch_async(queue, ^{
+        NSLog(@"任务2 -- %@",[NSThread currentThread]);
+    });
+    dispatch_async(queue, ^{
+        NSLog(@"任务3 -- %@",[NSThread currentThread]);
+    });
+    dispatch_barrier_sync(queue, ^{
+        NSLog(@"任务0 -- %@",[NSThread currentThread]);
+        for (int i = 0; i < 100; i++) {
+            if (i % 30 == 0) {
+                NSLog(@"任务0 --- log:%d -- %@",i,[NSThread currentThread]);
+            }
+        }
+    });
+    NSLog(@"dispatch_barrier_sync  down!!!");
+    dispatch_async(queue, ^{
+        NSLog(@"任务4 -- %@",[NSThread currentThread]);
+    });
+    dispatch_async(queue, ^{
+        NSLog(@"任务5 -- %@",[NSThread currentThread]);
+    });
+    dispatch_async(queue, ^{
+        NSLog(@"任务6 -- %@",[NSThread currentThread]);
+    });
 }
 
 - (void)lock12 {
