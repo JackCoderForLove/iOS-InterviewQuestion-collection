@@ -47,6 +47,11 @@ typedef void(^XWLogBlock)(NSArray *array);
 //    [self performDemo1];
 }
 
+
+
+
+
+
 - (void)lock18 {
     NSLog(@"start");
 //    dispatch_sync(dispatch_get_main_queue(), ^{
