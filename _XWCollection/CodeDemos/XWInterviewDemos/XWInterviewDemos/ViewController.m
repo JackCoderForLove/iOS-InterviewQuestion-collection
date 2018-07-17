@@ -11,6 +11,7 @@
 #import <pthread.h>
 #import "XWPerson.h"
 #import "XWStudent.h"
+#import "SecondViewController.h"
 
 typedef struct XWSize {
     CGFloat width;
@@ -22,6 +23,8 @@ typedef void(^XWBlock)(NSString *str);
 typedef void(^XWLogBlock)(NSArray *array);
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *toSecondBtn;
+@property (weak, nonatomic) IBOutlet UIView *redView;
 
 @property (atomic, strong) NSMutableArray *array;
 @property (nonatomic, strong) NSArray *originArray;
@@ -35,6 +38,8 @@ typedef void(^XWLogBlock)(NSArray *array);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setupRunloopObserver];
     
     self.array = [NSMutableArray array];
     
@@ -62,6 +67,47 @@ typedef void(^XWLogBlock)(NSArray *array);
 //        NSLog(@"viewDidAppear once");
 //    });
     
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    self.redView.bounds = CGRectMake(0, 0, 300, 300);
+}
+
+- (void)setupRunloopObserver
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        CFRunLoopRef runloop = CFRunLoopGetCurrent();
+        
+        CFRunLoopObserverRef enterObserver;
+        enterObserver = CFRunLoopObserverCreate(CFAllocatorGetDefault(),
+                                                kCFRunLoopEntry | kCFRunLoopExit,
+                                                true,
+                                                -0x7FFFFFFF,
+                                                BBRunloopObserverCallBack, NULL);
+        CFRunLoopAddObserver(runloop, enterObserver, kCFRunLoopCommonModes);
+        CFRelease(enterObserver);
+    });
+}
+
+static void BBRunloopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info) {
+    switch (activity) {
+        case kCFRunLoopEntry: {
+            NSLog(@"enter runloop...");
+        }
+            break;
+        case kCFRunLoopExit: {
+            NSLog(@"leave runloop...");
+        }
+            break;
+        default: break;
+    }
+}
+
+
+- (IBAction)toSecondVCClick:(id)sender {
+    SecondViewController *secVC = [SecondViewController loadViewController];
+    [self.navigationController pushViewController:secVC animated:YES];
 }
 
 - (void)testLoad2 {

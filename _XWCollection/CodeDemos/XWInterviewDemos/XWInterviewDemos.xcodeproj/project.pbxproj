@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		2E8C5CBF20FD48FC00C77A75 /* XWPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E8C5CBE20FD48FC00C77A75 /* XWPerson.m */; };
 		2E8C5CC220FD49DB00C77A75 /* XWStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E8C5CC120FD49DB00C77A75 /* XWStudent.m */; };
+		DE1312CF20FDEE1F00E39ED9 /* SecondView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1312CE20FDEE1F00E39ED9 /* SecondView.m */; };
+		DE70582620FD9A3100439245 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE70582420FD9A3100439245 /* SecondViewController.m */; };
+		DE70582720FD9A3100439245 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE70582520FD9A3100439245 /* SecondViewController.xib */; };
+		DE70582A20FDBF2500439245 /* NSTimer+XW.m in Sources */ = {isa = PBXBuildFile; fileRef = DE70582920FDBF2500439245 /* NSTimer+XW.m */; };
+		DE70582D20FDC81200439245 /* XWWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = DE70582C20FDC81200439245 /* XWWeakProxy.m */; };
 		DE99F16120F7796B00135326 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE99F16020F7796B00135326 /* AppDelegate.m */; };
 		DE99F16420F7796B00135326 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE99F16320F7796B00135326 /* ViewController.m */; };
 		DE99F16720F7796B00135326 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE99F16520F7796B00135326 /* Main.storyboard */; };
@@ -41,6 +46,15 @@
 		2E8C5CBE20FD48FC00C77A75 /* XWPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWPerson.m; sourceTree = "<group>"; };
 		2E8C5CC020FD49DB00C77A75 /* XWStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWStudent.h; sourceTree = "<group>"; };
 		2E8C5CC120FD49DB00C77A75 /* XWStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWStudent.m; sourceTree = "<group>"; };
+		DE1312CD20FDEE1F00E39ED9 /* SecondView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondView.h; sourceTree = "<group>"; };
+		DE1312CE20FDEE1F00E39ED9 /* SecondView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondView.m; sourceTree = "<group>"; };
+		DE70582320FD9A3100439245 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		DE70582420FD9A3100439245 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		DE70582520FD9A3100439245 /* SecondViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
+		DE70582820FDBF2500439245 /* NSTimer+XW.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+XW.h"; sourceTree = "<group>"; };
+		DE70582920FDBF2500439245 /* NSTimer+XW.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+XW.m"; sourceTree = "<group>"; };
+		DE70582B20FDC81200439245 /* XWWeakProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWWeakProxy.h; sourceTree = "<group>"; };
+		DE70582C20FDC81200439245 /* XWWeakProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWWeakProxy.m; sourceTree = "<group>"; };
 		DE99F15C20F7796B00135326 /* XWInterviewDemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XWInterviewDemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE99F15F20F7796B00135326 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DE99F16020F7796B00135326 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -120,6 +134,15 @@
 				2E8C5CBE20FD48FC00C77A75 /* XWPerson.m */,
 				2E8C5CC020FD49DB00C77A75 /* XWStudent.h */,
 				2E8C5CC120FD49DB00C77A75 /* XWStudent.m */,
+				DE70582320FD9A3100439245 /* SecondViewController.h */,
+				DE70582420FD9A3100439245 /* SecondViewController.m */,
+				DE1312CD20FDEE1F00E39ED9 /* SecondView.h */,
+				DE1312CE20FDEE1F00E39ED9 /* SecondView.m */,
+				DE70582520FD9A3100439245 /* SecondViewController.xib */,
+				DE70582820FDBF2500439245 /* NSTimer+XW.h */,
+				DE70582920FDBF2500439245 /* NSTimer+XW.m */,
+				DE70582B20FDC81200439245 /* XWWeakProxy.h */,
+				DE70582C20FDC81200439245 /* XWWeakProxy.m */,
 			);
 			path = XWInterviewDemos;
 			sourceTree = "<group>";
@@ -245,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE70582720FD9A3100439245 /* SecondViewController.xib in Resources */,
 				DE99F16C20F7796C00135326 /* LaunchScreen.storyboard in Resources */,
 				DE99F16920F7796C00135326 /* Assets.xcassets in Resources */,
 				DE99F16720F7796B00135326 /* Main.storyboard in Resources */,
@@ -272,8 +296,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE70582620FD9A3100439245 /* SecondViewController.m in Sources */,
+				DE70582D20FDC81200439245 /* XWWeakProxy.m in Sources */,
 				DE99F16420F7796B00135326 /* ViewController.m in Sources */,
 				DE99F16F20F7796D00135326 /* main.m in Sources */,
+				DE70582A20FDBF2500439245 /* NSTimer+XW.m in Sources */,
+				DE1312CF20FDEE1F00E39ED9 /* SecondView.m in Sources */,
 				DE99F16120F7796B00135326 /* AppDelegate.m in Sources */,
 				2E8C5CC220FD49DB00C77A75 /* XWStudent.m in Sources */,
 				2E8C5CBF20FD48FC00C77A75 /* XWPerson.m in Sources */,
