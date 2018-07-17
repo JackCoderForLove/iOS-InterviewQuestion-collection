@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import <objc/runtime.h>
 #import <pthread.h>
+#import "XWPerson.h"
+#import "XWStudent.h"
 
 typedef struct XWSize {
     CGFloat width;
@@ -22,10 +24,11 @@ typedef void(^XWLogBlock)(NSArray *array);
 @interface ViewController ()
 
 @property (atomic, strong) NSMutableArray *array;
-
 @property (nonatomic, strong) NSArray *originArray;
 @property (nonatomic, strong) NSMutableArray *conditionArray;
 @property (nonatomic, strong) NSCondition *xwCondition;
+
+@property (nonatomic, copy) NSMutableArray *xw_mutableCopyArray;
 @end
 
 @implementation ViewController
@@ -40,15 +43,53 @@ typedef void(^XWLogBlock)(NSArray *array);
     self.conditionArray = [NSMutableArray array];
     self.xwCondition = [[NSCondition alloc] init];
     
-    [self lock18];
+    [self testLoad2];
+    
+//    [self testCopy1];
+//    [self lock18];
     
 //    [self performDemo3];
 //    [self performDemo2selector:@selector(performDemoNumber1:Number2:Number3:) withObjects:@[@1.0,@2.0,@3.0]];
 //    [self performDemo1];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+//    NSLog(@" xw_mutableCopyArray:%p",self.xw_mutableCopyArray);
+    
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        NSLog(@"viewDidAppear once");
+//    });
+    
+}
+
+- (void)testLoad2 {
+    XWPerson *p1 = [[XWPerson alloc] init];
+    XWPerson *p2 = [[XWPerson alloc] init];
+    XWStudent *p3 = [[XWStudent alloc] init];
+    XWStudent *p4 = [[XWStudent alloc] init];
+    NSLog(@"p1:%p  -  p2:%p  -  p3:%p  -  p4:%p",p1,p2,p3,p4);
+}
+
+- (void)testLoad {
+    XWPerson *p1 = [[XWPerson alloc] init];
+    XWPerson *p2 = [[XWPerson alloc] init];
+    XWPerson *p3 = [[XWPerson alloc] init];
+    XWPerson *p4 = [[XWPerson alloc] init];
+    NSLog(@"p1:%p  -  p2:%p  -  p3:%p  -  p4:%p",p1,p2,p3,p4);
+}
+
+- (void)testCopy1 {
+    NSMutableArray *array = [NSMutableArray arrayWithObject:@[@1,@2,@3]];
+    self.xw_mutableCopyArray = array;
+    NSLog(@"array:%p -------- xw_mutableCopyArray:%p",array,self.xw_mutableCopyArray);
+}
 
 
+- (void)linkedDemo1 {
+    
+}
 
 
 

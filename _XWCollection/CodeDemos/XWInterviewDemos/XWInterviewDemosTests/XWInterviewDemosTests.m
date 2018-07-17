@@ -24,6 +24,86 @@
     [super tearDown];
 }
 
+- (void)testArrayDeal {
+    NSMutableArray *array = @[@1,@2,@3].mutableCopy;
+    
+    [self arrayDeal:array];
+    
+    NSLog(@"array  : %@",array);
+}
+
+- (void)arrayDeal:(NSMutableArray *)arrayM {
+    [arrayM insertObject:@"10086" atIndex:0];
+}
+
+
+// 冒泡3-优化
+- (void)testSort3Array {
+    NSUInteger count = 0;
+    BOOL isNonSorted = YES;
+    //@[@16,@1,@2,@9,@7,@12,@5,@3,@8,@13,@10]
+    NSMutableArray *array = @[@16,@122,@9,@7,@6,@5,@4,@3,@2,@1].mutableCopy;
+    for (int i = 0; i < array.count && isNonSorted; i++) {
+        isNonSorted = NO;
+        for (int j = (int)array.count - 2; j >= i; j--) {
+            count++;
+            NSNumber *objPre = array[j];
+            NSNumber *objNext = array[j+1];
+            if (objPre.integerValue < objNext.integerValue) {
+                [array exchangeObjectAtIndex:j withObjectAtIndex:j+1];
+                isNonSorted = YES;
+            }
+        }
+        [self logArr:array];
+    }
+    NSLog(@"%lu 次比较!!",(unsigned long)count); //17
+}
+
+// 冒泡2
+- (void)testSort2Array {
+    NSUInteger count = 0;
+    NSMutableArray *array = @[@16,@122,@9,@7,@6,@5,@4,@3,@2,@1].mutableCopy;
+    for (int i = 0; i < array.count; i++) {
+        for (int j = (int)array.count - 2; j >= i; j--) {
+            count++;
+            NSNumber *objPre = array[j];
+            NSNumber *objNext = array[j+1];
+            if (objPre.integerValue < objNext.integerValue) {
+                [array exchangeObjectAtIndex:j withObjectAtIndex:j+1];
+            }
+        }
+        [self logArr:array];
+    }
+    NSLog(@"%lu 次比较!!",(unsigned long)count); //45
+}
+
+// 冒泡1
+- (void)testSort1Array {
+    NSUInteger count = 0;
+    NSMutableArray *array = @[@16,@122,@9,@7,@6,@5,@4,@3,@2,@1].mutableCopy;
+    for (int i = 0; i < array.count; i++) {
+        for (int j = i+1; j < array.count; j++) {
+            count++;
+            NSNumber *objPre = array[i];
+            NSNumber *objNext = array[j];
+            if (objPre.integerValue < objNext.integerValue) {
+                [array exchangeObjectAtIndex:i withObjectAtIndex:j];
+            }
+        }
+        [self logArr:array];
+    }
+    [self logArr:array];
+    NSLog(@"%lu 次比较!!",(unsigned long)count); //45 次比较
+}
+- (void)logArr:(NSMutableArray * )array {
+    NSString * str = @"";
+    for (NSNumber * value in array) {
+        str = [str stringByAppendingString:[NSString stringWithFormat:@"%zd ",[value integerValue]]];
+    }
+    NSLog(@"%@",str);
+}
+
+
 - (void)testExample {
     NSString *ip = @"1.1.1.1";
     XCTAssertTrue([self ipIsValidity2:ip]);

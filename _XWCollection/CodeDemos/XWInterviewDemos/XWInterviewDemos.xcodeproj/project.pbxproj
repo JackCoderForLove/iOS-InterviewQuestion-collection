@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E8C5CBF20FD48FC00C77A75 /* XWPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E8C5CBE20FD48FC00C77A75 /* XWPerson.m */; };
+		2E8C5CC220FD49DB00C77A75 /* XWStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E8C5CC120FD49DB00C77A75 /* XWStudent.m */; };
 		DE99F16120F7796B00135326 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE99F16020F7796B00135326 /* AppDelegate.m */; };
 		DE99F16420F7796B00135326 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE99F16320F7796B00135326 /* ViewController.m */; };
 		DE99F16720F7796B00135326 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE99F16520F7796B00135326 /* Main.storyboard */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E8C5CBD20FD48FC00C77A75 /* XWPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWPerson.h; sourceTree = "<group>"; };
+		2E8C5CBE20FD48FC00C77A75 /* XWPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWPerson.m; sourceTree = "<group>"; };
+		2E8C5CC020FD49DB00C77A75 /* XWStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWStudent.h; sourceTree = "<group>"; };
+		2E8C5CC120FD49DB00C77A75 /* XWStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWStudent.m; sourceTree = "<group>"; };
 		DE99F15C20F7796B00135326 /* XWInterviewDemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XWInterviewDemos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE99F15F20F7796B00135326 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DE99F16020F7796B00135326 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -110,6 +116,10 @@
 				DE99F16A20F7796C00135326 /* LaunchScreen.storyboard */,
 				DE99F16D20F7796C00135326 /* Info.plist */,
 				DE99F16E20F7796D00135326 /* main.m */,
+				2E8C5CBD20FD48FC00C77A75 /* XWPerson.h */,
+				2E8C5CBE20FD48FC00C77A75 /* XWPerson.m */,
+				2E8C5CC020FD49DB00C77A75 /* XWStudent.h */,
+				2E8C5CC120FD49DB00C77A75 /* XWStudent.m */,
 			);
 			path = XWInterviewDemos;
 			sourceTree = "<group>";
@@ -265,6 +275,8 @@
 				DE99F16420F7796B00135326 /* ViewController.m in Sources */,
 				DE99F16F20F7796D00135326 /* main.m in Sources */,
 				DE99F16120F7796B00135326 /* AppDelegate.m in Sources */,
+				2E8C5CC220FD49DB00C77A75 /* XWStudent.m in Sources */,
+				2E8C5CBF20FD48FC00C77A75 /* XWPerson.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -99,7 +99,7 @@
 - 10.在一个数组中找出前四个最大的数字。- [链接](https://github.com/liberalisman/iOS-InterviewQuestion-collection/blob/master/0.算法集合/10.第十题.md)
 - 11.假如有 10亿 条数据，每条数据的大小在 10k-100k 之间，我们有一台内存为 4G 的电脑，如何算出播放次数最多的一条微博？
 - 12.如何打印一个矩阵？
-- 13.如何验证一个 `IP` 地址的有效性？
+- 13.如何验证一个 `IP` 地址的有效性？- [链接](https://github.com/qxuewei/iOS-InterviewQuestion-collection/blob/master/_XWCollection/%E7%AE%97%E6%B3%95%E9%9B%86%E5%90%88/13.md)
 - 14.栈中储存着一组无序的数字，不用遍历的方式，如何找出最小值？
 - 15.二维数组查找一个值。
 
