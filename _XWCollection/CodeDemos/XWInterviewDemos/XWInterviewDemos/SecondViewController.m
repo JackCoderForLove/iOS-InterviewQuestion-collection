@@ -29,17 +29,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupUI];
+    
+    [self testBlock];
+    
+//    [self setupUI];
     
 //    [self drawCircle];
     
-    __weak typeof(self) weakSelf = self;
-    
-    [NSTimer xw_timerTimeInterval:1.0 block:^{
-        [weakSelf timerMethod];
-    } repeats:YES];
+//    __weak typeof(self) weakSelf = self;
+//    [NSTimer scheduledTimerWithTimeInterval:1.0 target:weakSelf selector:@selector(timerMethod) userInfo:nil repeats:YES];
+////
+//    [NSTimer xw_timerTimeInterval:1.0 block:^{
+//        [weakSelf timerMethod];
+//    } repeats:YES];
     
 //    [NSTimer scheduledTimerWithTimeInterval:1.0 target:[XWWeakProxy proxyWithTarget:self] selector:@selector(timerMethod) userInfo:nil repeats:YES];
+}
+
+- (void)testBlock {
+    
+    void(^logBlock)(void) = ^(void) {
+        NSLog(@"%@",self.tipLB);
+    };
+    logBlock();
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -83,10 +96,10 @@
 
 - (void)timerMethod {
     NSLog(@"计时");
-    secondX = secondX == 100 ? 200 : 100;
-    [UIView animateWithDuration:0.1 animations:^{
-        self.secondV.frame = CGRectMake(self->secondX, 100, 200, 200);
-    }];
+//    secondX = secondX == 100 ? 200 : 100;
+//    [UIView animateWithDuration:0.1 animations:^{
+//        self.secondV.frame = CGRectMake(self->secondX, 100, 200, 200);
+//    }];
 }
 
 - (void)dealloc {

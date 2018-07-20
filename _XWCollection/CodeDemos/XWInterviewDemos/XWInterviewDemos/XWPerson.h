@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface XWPerson : NSObject
+@property (nonatomic, copy) NSString *name;
 
+@property (nonatomic, assign, readonly) double height;
 @end

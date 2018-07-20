@@ -11,8 +11,7 @@
 @implementation NSTimer (XW)
 
 + (NSTimer *)xw_timerTimeInterval:(NSTimeInterval)timeInterval block:(void(^)(void))block repeats:(BOOL)repeats {
-    void(^inBlock)(void) = [block copy];
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:timeInterval target:self selector:@selector(timerMethod:) userInfo:inBlock repeats:repeats];
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:timeInterval target:self selector:@selector(timerMethod:) userInfo:block repeats:repeats];
     return timer;
 }
 

@@ -8,6 +8,12 @@
 
 #import "XWPerson.h"
 
+@interface XWPerson()
+@property (nonatomic, copy) NSString *age;
+
+@property (nonatomic, assign, readwrite) double height;
+@end
+
 @implementation XWPerson
 + (void)initialize {
     NSLog(@"%s",__func__);

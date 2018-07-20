@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B5E29B4CDC93033B98B425F /* libPods-XWInterviewDemosTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE62C528DEE9BC1663E7B8E /* libPods-XWInterviewDemosTests.a */; };
 		2E8C5CBF20FD48FC00C77A75 /* XWPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E8C5CBE20FD48FC00C77A75 /* XWPerson.m */; };
 		2E8C5CC220FD49DB00C77A75 /* XWStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E8C5CC120FD49DB00C77A75 /* XWStudent.m */; };
+		556ABABD706336BE65DAEFF4 /* libPods-XWInterviewDemos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C9ABC124E0BEB2C123311E /* libPods-XWInterviewDemos.a */; };
+		97E5E470DBC5B458F87F1546 /* libPods-XWInterviewDemosUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8836EBD9343812A96473396D /* libPods-XWInterviewDemosUITests.a */; };
 		DE1312CF20FDEE1F00E39ED9 /* SecondView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1312CE20FDEE1F00E39ED9 /* SecondView.m */; };
 		DE70582620FD9A3100439245 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE70582420FD9A3100439245 /* SecondViewController.m */; };
 		DE70582720FD9A3100439245 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE70582520FD9A3100439245 /* SecondViewController.xib */; };
@@ -22,6 +25,7 @@
 		DE99F16F20F7796D00135326 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE99F16E20F7796D00135326 /* main.m */; };
 		DE99F17920F7796D00135326 /* XWInterviewDemosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE99F17820F7796D00135326 /* XWInterviewDemosTests.m */; };
 		DE99F18420F7796D00135326 /* XWInterviewDemosUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE99F18320F7796D00135326 /* XWInterviewDemosUITests.m */; };
+		DEB87A892100925000E4BD90 /* XWPerson+Study.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB87A882100925000E4BD90 /* XWPerson+Study.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,10 +46,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10B5B9191ECBD5C2F7089BC2 /* Pods-XWInterviewDemos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWInterviewDemos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XWInterviewDemos/Pods-XWInterviewDemos.debug.xcconfig"; sourceTree = "<group>"; };
 		2E8C5CBD20FD48FC00C77A75 /* XWPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWPerson.h; sourceTree = "<group>"; };
 		2E8C5CBE20FD48FC00C77A75 /* XWPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWPerson.m; sourceTree = "<group>"; };
 		2E8C5CC020FD49DB00C77A75 /* XWStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWStudent.h; sourceTree = "<group>"; };
 		2E8C5CC120FD49DB00C77A75 /* XWStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWStudent.m; sourceTree = "<group>"; };
+		411394C7902DDDE8D0E095AD /* Pods-XWInterviewDemosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWInterviewDemosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XWInterviewDemosTests/Pods-XWInterviewDemosTests.release.xcconfig"; sourceTree = "<group>"; };
+		62EB9B86035ACD4F7004FEA4 /* Pods-XWInterviewDemosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWInterviewDemosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XWInterviewDemosTests/Pods-XWInterviewDemosTests.debug.xcconfig"; sourceTree = "<group>"; };
+		711EA8BC35240233F30A73C1 /* Pods-XWInterviewDemosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWInterviewDemosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XWInterviewDemosUITests/Pods-XWInterviewDemosUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8836EBD9343812A96473396D /* libPods-XWInterviewDemosUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XWInterviewDemosUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FE62C528DEE9BC1663E7B8E /* libPods-XWInterviewDemosTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XWInterviewDemosTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92C9ABC124E0BEB2C123311E /* libPods-XWInterviewDemos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XWInterviewDemos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1312CD20FDEE1F00E39ED9 /* SecondView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondView.h; sourceTree = "<group>"; };
 		DE1312CE20FDEE1F00E39ED9 /* SecondView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondView.m; sourceTree = "<group>"; };
 		DE70582320FD9A3100439245 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
@@ -71,6 +82,10 @@
 		DE99F17F20F7796D00135326 /* XWInterviewDemosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XWInterviewDemosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE99F18320F7796D00135326 /* XWInterviewDemosUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWInterviewDemosUITests.m; sourceTree = "<group>"; };
 		DE99F18520F7796D00135326 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEB87A872100925000E4BD90 /* XWPerson+Study.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XWPerson+Study.h"; sourceTree = "<group>"; };
+		DEB87A882100925000E4BD90 /* XWPerson+Study.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "XWPerson+Study.m"; sourceTree = "<group>"; };
+		F8E2FD7EDCEAAC25DE3D296C /* Pods-XWInterviewDemosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWInterviewDemosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XWInterviewDemosUITests/Pods-XWInterviewDemosUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FBD35F54D6BA2ED9315EC444 /* Pods-XWInterviewDemos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWInterviewDemos.release.xcconfig"; path = "Pods/Target Support Files/Pods-XWInterviewDemos/Pods-XWInterviewDemos.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				556ABABD706336BE65DAEFF4 /* libPods-XWInterviewDemos.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B5E29B4CDC93033B98B425F /* libPods-XWInterviewDemosTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,12 +109,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97E5E470DBC5B458F87F1546 /* libPods-XWInterviewDemosUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C2FD5B5FD677C0D190A98AA8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				10B5B9191ECBD5C2F7089BC2 /* Pods-XWInterviewDemos.debug.xcconfig */,
+				FBD35F54D6BA2ED9315EC444 /* Pods-XWInterviewDemos.release.xcconfig */,
+				62EB9B86035ACD4F7004FEA4 /* Pods-XWInterviewDemosTests.debug.xcconfig */,
+				411394C7902DDDE8D0E095AD /* Pods-XWInterviewDemosTests.release.xcconfig */,
+				711EA8BC35240233F30A73C1 /* Pods-XWInterviewDemosUITests.debug.xcconfig */,
+				F8E2FD7EDCEAAC25DE3D296C /* Pods-XWInterviewDemosUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DE99F15320F7796B00135326 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +136,8 @@
 				DE99F17720F7796D00135326 /* XWInterviewDemosTests */,
 				DE99F18220F7796D00135326 /* XWInterviewDemosUITests */,
 				DE99F15D20F7796B00135326 /* Products */,
+				C2FD5B5FD677C0D190A98AA8 /* Pods */,
+				E16B07B633B1051D6820D47D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +165,8 @@
 				DE99F16E20F7796D00135326 /* main.m */,
 				2E8C5CBD20FD48FC00C77A75 /* XWPerson.h */,
 				2E8C5CBE20FD48FC00C77A75 /* XWPerson.m */,
+				DEB87A872100925000E4BD90 /* XWPerson+Study.h */,
+				DEB87A882100925000E4BD90 /* XWPerson+Study.m */,
 				2E8C5CC020FD49DB00C77A75 /* XWStudent.h */,
 				2E8C5CC120FD49DB00C77A75 /* XWStudent.m */,
 				DE70582320FD9A3100439245 /* SecondViewController.h */,
@@ -165,6 +200,16 @@
 			path = XWInterviewDemosUITests;
 			sourceTree = "<group>";
 		};
+		E16B07B633B1051D6820D47D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92C9ABC124E0BEB2C123311E /* libPods-XWInterviewDemos.a */,
+				8FE62C528DEE9BC1663E7B8E /* libPods-XWInterviewDemosTests.a */,
+				8836EBD9343812A96473396D /* libPods-XWInterviewDemosUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -172,6 +217,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE99F18820F7796D00135326 /* Build configuration list for PBXNativeTarget "XWInterviewDemos" */;
 			buildPhases = (
+				F536FBF1BD1D922DF9A2183C /* [CP] Check Pods Manifest.lock */,
 				DE99F15820F7796B00135326 /* Sources */,
 				DE99F15920F7796B00135326 /* Frameworks */,
 				DE99F15A20F7796B00135326 /* Resources */,
@@ -189,6 +235,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE99F18B20F7796D00135326 /* Build configuration list for PBXNativeTarget "XWInterviewDemosTests" */;
 			buildPhases = (
+				58767AD1B914BBEAA6909201 /* [CP] Check Pods Manifest.lock */,
 				DE99F17020F7796D00135326 /* Sources */,
 				DE99F17120F7796D00135326 /* Frameworks */,
 				DE99F17220F7796D00135326 /* Resources */,
@@ -207,6 +254,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE99F18E20F7796D00135326 /* Build configuration list for PBXNativeTarget "XWInterviewDemosUITests" */;
 			buildPhases = (
+				DF90CF5436EE29DCE88C1B05 /* [CP] Check Pods Manifest.lock */,
 				DE99F17B20F7796D00135326 /* Sources */,
 				DE99F17C20F7796D00135326 /* Frameworks */,
 				DE99F17D20F7796D00135326 /* Resources */,
@@ -291,12 +339,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		58767AD1B914BBEAA6909201 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XWInterviewDemosTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF90CF5436EE29DCE88C1B05 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XWInterviewDemosUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F536FBF1BD1D922DF9A2183C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XWInterviewDemos-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DE99F15820F7796B00135326 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DE70582620FD9A3100439245 /* SecondViewController.m in Sources */,
+				DEB87A892100925000E4BD90 /* XWPerson+Study.m in Sources */,
 				DE70582D20FDC81200439245 /* XWWeakProxy.m in Sources */,
 				DE99F16420F7796B00135326 /* ViewController.m in Sources */,
 				DE99F16F20F7796D00135326 /* main.m in Sources */,
@@ -471,14 +577,12 @@
 		};
 		DE99F18920F7796D00135326 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10B5B9191ECBD5C2F7089BC2 /* Pods-XWInterviewDemos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = XWInterviewDemos/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qiuxuewei.XWInterviewDemos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -487,14 +591,12 @@
 		};
 		DE99F18A20F7796D00135326 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBD35F54D6BA2ED9315EC444 /* Pods-XWInterviewDemos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = XWInterviewDemos/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qiuxuewei.XWInterviewDemos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -503,15 +605,12 @@
 		};
 		DE99F18C20F7796D00135326 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62EB9B86035ACD4F7004FEA4 /* Pods-XWInterviewDemosTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = XWInterviewDemosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qiuxuewei.XWInterviewDemosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -521,15 +620,12 @@
 		};
 		DE99F18D20F7796D00135326 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 411394C7902DDDE8D0E095AD /* Pods-XWInterviewDemosTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = XWInterviewDemosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qiuxuewei.XWInterviewDemosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -539,14 +635,11 @@
 		};
 		DE99F18F20F7796D00135326 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 711EA8BC35240233F30A73C1 /* Pods-XWInterviewDemosUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = XWInterviewDemosUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qiuxuewei.XWInterviewDemosUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -556,14 +649,11 @@
 		};
 		DE99F19020F7796D00135326 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8E2FD7EDCEAAC25DE3D296C /* Pods-XWInterviewDemosUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = XWInterviewDemosUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qiuxuewei.XWInterviewDemosUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -12,6 +12,8 @@
 #import "XWPerson.h"
 #import "XWStudent.h"
 #import "SecondViewController.h"
+#import "XWPerson.h"
+#import "XWPerson+Study.h"
 
 typedef struct XWSize {
     CGFloat width;
@@ -32,6 +34,8 @@ typedef void(^XWLogBlock)(NSArray *array);
 @property (nonatomic, strong) NSCondition *xwCondition;
 
 @property (nonatomic, copy) NSMutableArray *xw_mutableCopyArray;
+
+@property (nonatomic, strong) XWPerson *person;
 @end
 
 @implementation ViewController
@@ -39,16 +43,20 @@ typedef void(^XWLogBlock)(NSArray *array);
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setupRunloopObserver];
-    
-    self.array = [NSMutableArray array];
-    
-    self.originArray = @[@1,@2,@3];
-    
-    self.conditionArray = [NSMutableArray array];
-    self.xwCondition = [[NSCondition alloc] init];
-    
     [self testLoad2];
+    
+//    [self setupRunloopObserver];
+//
+//    self.array = [NSMutableArray array];
+//
+//    self.originArray = @[@1,@2,@3];
+//
+//    self.conditionArray = [NSMutableArray array];
+//    self.xwCondition = [[NSCondition alloc] init];
+//
+//    [self testLoad2];
+    
+//    [self.person saveHeight:180];
     
 //    [self testCopy1];
 //    [self lock18];
@@ -60,6 +68,9 @@ typedef void(^XWLogBlock)(NSArray *array);
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    NSLog(@"person height : %f",[self.person getPersonHeight]);
+    
 //    NSLog(@" xw_mutableCopyArray:%p",self.xw_mutableCopyArray);
     
 //    static dispatch_once_t onceToken;
@@ -111,11 +122,12 @@ static void BBRunloopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopAc
 }
 
 - (void)testLoad2 {
-    XWPerson *p1 = [[XWPerson alloc] init];
-    XWPerson *p2 = [[XWPerson alloc] init];
-    XWStudent *p3 = [[XWStudent alloc] init];
+//    XWPerson *p1 = [[XWPerson alloc] init];
+//    XWPerson *p2 = [[XWPerson alloc] init];
+//    XWStudent *p3 = [[XWStudent alloc] init];
     XWStudent *p4 = [[XWStudent alloc] init];
-    NSLog(@"p1:%p  -  p2:%p  -  p3:%p  -  p4:%p",p1,p2,p3,p4);
+    NSLog(@"p4:%p",p4);
+//    NSLog(@"p1:%p  -  p2:%p  -  p3:%p  -  p4:%p",p1,p2,p3,p4);
 }
 
 - (void)testLoad {
@@ -568,6 +580,13 @@ void lock16Func() {
 }
 - (void)performDemoDict:(NSDictionary *)dict {
     NSLog(@"%@",dict);
+}
+
+- (XWPerson *)person {
+    if(!_person){
+        _person = [[XWPerson alloc] init];
+    }
+    return _person;
 }
 
 @end
