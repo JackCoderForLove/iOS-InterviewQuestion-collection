@@ -79,6 +79,9 @@ typedef void(^XWLogBlock)(NSArray *array);
 //    });
     
 }
+- (IBAction)topBtnClick:(id)sender {
+    NSLog(@"click");
+}
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     self.redView.bounds = CGRectMake(0, 0, 300, 300);
