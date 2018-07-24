@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "XWFloatingWindowView.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,8 +19,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [XWFloatingWindowView show];
-    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    ViewController *vc = [[ViewController alloc] init];
+    UINavigationController *naviController = [[UINavigationController alloc] initWithRootViewController:vc];
+    naviController.navigationBar.tintColor = [UIColor whiteColor];
+    naviController.navigationBar.barStyle = UIBarStyleBlack;
+    self.window.rootViewController = naviController;
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 
